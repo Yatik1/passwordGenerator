@@ -20,10 +20,27 @@ const App = () => {
            className='outline-none w-full py-1 px-3'
            placeholder='Password' 
            readOnly 
-
+           //ref={passwordRef}
            />
 
+         <button
+           className='outline-none bg-blue-600 text-white px-3 py-0.5 shrink-0'
+          >copy</button>
 
+       </div>
+
+       <div className="flex text-sm gap-x-2">
+         <div className="flex items-center gap-x-1">
+           <input 
+            type="range"
+            min={6}
+            max={100}
+            value={length}
+            className='cursor-pointer'
+            onChange={(e) => setLength(e.target.value)}
+           />
+           <label htmlFor="length"> Length : {length}</label>
+         </div>
        </div>
     </div>
   )
