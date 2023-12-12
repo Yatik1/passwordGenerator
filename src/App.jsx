@@ -3,14 +3,14 @@ import React, { useState } from 'react'
 const App = () => {
 
  const [length , setLength] = useState(8)
- const [numberAllowed,setNumberALlowed] = useState(false)
+ const [numberAllowed,setNumberAllowed] = useState(false)
  const [charAllowed , setCharAllowed] = useState(false)
  const [password,setPassword] = useState('')
 
 
 
   return (
-    <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-900 text-orange-500'>
+    <div className='w-full max-w-md mx-auto shadow-md rounded-lg px-4 py-3 my-8 bg-gray-900 text-white'>
        <h1 className="text-white text-center my-3">Password Generator 🔐</h1>
        <div className="flex shadow rounded-lg overflow-hidden mb-4">
          
@@ -30,6 +30,7 @@ const App = () => {
        </div>
 
        <div className="flex text-sm gap-x-2">
+
          <div className="flex items-center gap-x-1">
            <input 
             type="range"
@@ -41,6 +42,28 @@ const App = () => {
            />
            <label htmlFor="length"> Length : {length}</label>
          </div>
+
+         <div className="flex items-center gap-x-1">
+           <input type="checkbox" 
+             defaultChecked={numberAllowed}
+             onChange={() => {
+              setNumberAllowed((prev) => !prev)
+             }} />
+            <label htmlFor="number">Numbers</label>
+         </div>
+
+         <div className='flex items-center gap-x-1'>
+          <input 
+          type="checkbox"
+          defaultChecked={charAllowed}
+          onChange={() => {
+            setCharAllowed((prev) => !prev)
+          }}
+           name=""
+          id="" />
+          <label htmlFor="charInput">Character</label>
+        </div>
+
        </div>
     </div>
   )
