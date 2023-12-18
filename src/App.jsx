@@ -26,8 +26,10 @@ const App = () => {
  } , [length , numberAllowed , charAllowed])
 
   const copyPasswordToClipboard = () => {
+
     window.navigator.clipboard.writeText(password)
     passwordRef.current?.select()
+    
   }
 
   useEffect(() => {
